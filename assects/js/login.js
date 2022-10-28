@@ -56,18 +56,18 @@ $(function(){
     $('#form_login').submit(function(e) {
         e.preventDefault()
         $.ajax({
-            method:'POST',
+            type:'POST',
             url:'/api/login',
             data:$(this).serialize(),
             success:function(res){
-
+                console.log(res);
                 if(res.status !== 0 ){
                     return layer.msg('登录失败！')
                 }
                 layer.msg('登录成功！')
                 // 将登录成功返回的token存到localStorage中
                 localStorage.setItem('token',res.token)
-                // console.log(res);
+                console.log(res);
                 // 登录成功以后 跳转到主页面
                 location.href='/index.html'
             }
