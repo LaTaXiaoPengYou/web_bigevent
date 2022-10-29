@@ -68,7 +68,7 @@ $(function(){
                 // 将登录成功返回的token存到localStorage中
                 localStorage.setItem('token',res.token)
                 console.log(res);
-                // 登录成功以后 跳转到主页面
+                // 登录成功以后 跳转到主页面 ''页面路径
                 location.href='/index.html'
             }
         })
